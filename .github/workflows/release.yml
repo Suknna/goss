@@ -5,8 +5,7 @@ on:
       - 'v0.*'
       - 'draft-*'
 permissions:
-  id-token: write
-  attestations: write
+  contents: write
 jobs:
   publishGitRelease:
     runs-on: ubuntu-latest
