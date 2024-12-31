@@ -2,8 +2,7 @@ name: Release goss
 on:
   push:
     tags:
-      - 'v0.*'
-      - 'draft-*'
+      - 'v*'
 permissions:
   contents: write
 jobs:
@@ -32,10 +31,11 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           draft: false
           generate_release_notes: true
           files:  build/*
           fail_on_unmatched_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
