@@ -31,11 +31,10 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           draft: false
           generate_release_notes: true
           files:  build/*
-          fail_on_unmatched_files: true
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
