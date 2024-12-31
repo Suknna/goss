@@ -4,7 +4,9 @@ on:
     tags:
       - 'v0.*'
       - 'draft-*'
-
+permissions:
+  id-token: write
+  attestations: write
 jobs:
   publishGitRelease:
     runs-on: ubuntu-latest
