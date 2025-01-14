@@ -120,7 +120,6 @@ func executeTasks(run *cfg.Run, hosts []*host, user, pass string, timeOut int, w
 					RemoteUser:     u,
 					RemotePassword: p,
 					TimeOut:        timeOut,
-					Auto:           true,
 				}, h.sudopass, run.Execute.Command)
 				elapsed := time.Since(start) // 计算执行时间
 				if err != nil {
@@ -149,7 +148,6 @@ func executeTasks(run *cfg.Run, hosts []*host, user, pass string, timeOut int, w
 						RemoteUser:     u,
 						RemotePassword: p,
 						TimeOut:        timeOut,
-						Auto:           true,
 					}, run.Download.RemotePath, localPath)
 				})
 			} else if run.Upload != nil {
@@ -164,7 +162,6 @@ func executeTasks(run *cfg.Run, hosts []*host, user, pass string, timeOut int, w
 						RemoteUser:     u,
 						RemotePassword: p,
 						TimeOut:        timeOut,
-						Auto:           true,
 					}, remotePath, run.Upload.LocalPath)
 				})
 			} else {

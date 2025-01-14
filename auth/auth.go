@@ -14,7 +14,6 @@ type Opts struct {
 	RemoteUser     string
 	RemotePassword string
 	TimeOut        int
-	Auto           bool
 }
 
 // 用于完成ssh认证操作
@@ -26,7 +25,7 @@ func Init(opts *Opts) (*ssh.Client, error) {
 			ssh.Password(opts.RemotePassword),
 		},
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
-		// HostKeyCallback: ssh.InsecureIgnoreHostKey(),
+
 		Timeout: time.Second * time.Duration(opts.TimeOut),
 	})
 	if err != nil {

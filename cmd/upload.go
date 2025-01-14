@@ -32,7 +32,6 @@ var uploadCmd = &cobra.Command{
 				RemoteUser:     remoteUser,
 				RemotePassword: remotePasswd,
 				TimeOut:        int(timeout),
-				Auto:           auto,
 			}, remotePath, localPath)
 		})
 	},

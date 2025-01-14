@@ -32,7 +32,6 @@ var downloadCmd = &cobra.Command{
 				RemoteUser:     remoteUser,
 				RemotePassword: remotePasswd,
 				TimeOut:        timeout,
-				Auto:           auto,
 			}, remotePath, localPath)
 		})
 	},
