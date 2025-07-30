@@ -1,0 +1,16 @@
+connection:
+  default_port: 22
+  connect_timeout: 3
+  security_mode: 0
+
+execution:
+  max_workers: 1
+  task_timeout: 120
+  stop_on_error: true
+
+file_transfer:
+  default_upload_dir: "/tmp"
+  default_download_dir: "./downloads/"
+  overwrite_policy: "always"
+  transfer_timeout: 1800
+  retries: 3
